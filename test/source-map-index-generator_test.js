@@ -84,16 +84,25 @@ var propmap = [{
       source: srcFile
     }];
 
-exports['test some simple stuff'] = function (assert, util) {
-  var map = new SourceMapFileCollector({
-    file: 'foo.js',
-    sourceRoot: '.'
+exports['test some simple stuff'] = function (test) {
+  test.expect(2);
+
+  var map;
+  test.doesNotThrow(function () {
+    map = new SourceMapFileCollector({
+      file: 'foo.js',
+      sourceRoot: '.'
+    });
   });
 
-  assert.ok(true);
+  test.ok(map);
+
+  test.done();
 };
 
-exports['test generates the same mapping as SourceMapGenerator'] = function (assert, util) {
+exports['test generates the same mapping as SourceMapGenerator'] = function (test) {
+  test.expect(1);
+
   var generatorProps = {
         file: 'min.js'
       },
@@ -124,5 +133,6 @@ exports['test generates the same mapping as SourceMapGenerator'] = function (ass
   var fileSourceMap = fileCollector.toString();
 
   // Assert that they generate the same map
-  assert.strictEqual(genSourceMap, fileSourceMap, 'The sourcemap from SourceMapGenerator does not match the source map from SourceMapFileCollector');
+  test.strictEqual(genSourceMap, fileSourceMap, 'The sourcemap from SourceMapGenerator does not match the source map from SourceMapFileCollector');
+  test.done();
 };
