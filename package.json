@@ -1,0 +1,42 @@
+{
+  "name": "source-map-index-generator",
+  "description": "Generate source-maps from index mappings",
+  "version": "0.1.0",
+  "homepage": "https://github.com/twolfson/source-map-index-generator",
+  "author": {
+    "name": "Todd Wolfson",
+    "email": "todd@twolfson.com",
+    "url": "http://twolfson.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/twolfson/source-map-index-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/twolfson/source-map-index-generator/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/twolfson/source-map-index-generator/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/source-map-index-generator",
+  "engines": {
+    "node": ">= 0.6.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "~0.3.17"
+  },
+  "keywords": [
+    "source-map",
+    "sourcemap",
+    "char",
+    "charAt",
+    "index",
+    "generator"
+  ]
+}
