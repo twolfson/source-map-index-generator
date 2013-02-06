@@ -1,4 +1,4 @@
-var SourceMapFileCollector = require('../lib/source-map-index-generator.js'),
+var SourceMapIndexGenerator = require('../lib/source-map-index-generator.js'),
     SourceMapGenerator = require('source-map').SourceMapGenerator;
 
 // Generate test data for mapping
@@ -89,7 +89,7 @@ exports['test some simple stuff'] = function (test) {
 
   var map;
   test.doesNotThrow(function () {
-    map = new SourceMapFileCollector({
+    map = new SourceMapIndexGenerator({
       file: 'foo.js',
       sourceRoot: '.'
     });
@@ -118,11 +118,11 @@ exports['test generates the same mapping as SourceMapGenerator'] = function (tes
   // Collect the source map
   var genSourceMap = generator.toString();
 
-  // Generate another source map via SourceMapFileCollector
-  var fileCollector = new SourceMapFileCollector(generatorProps);
+  // Generate another source map via SourceMapIndexGenerator
+  var indexGenerator = new SourceMapIndexGenerator(generatorProps);
 
-  // Add the file coordinate mapping
-  fileCollector.addIndexMapping({
+  // Add the index coordinate mapping
+  indexGenerator.addIndexMapping({
     src: srcFile,
     input: input,
     output: output,
@@ -130,9 +130,9 @@ exports['test generates the same mapping as SourceMapGenerator'] = function (tes
   });
 
   // Collect the second source map
-  var fileSourceMap = fileCollector.toString();
-
+  var indexSourceMap = indexGenerator.toString();
+console.log(indexSourceMap);
   // Assert that they generate the same map
-  test.strictEqual(genSourceMap, fileSourceMap, 'The sourcemap from SourceMapGenerator does not match the source map from SourceMapFileCollector');
+  test.strictEqual(genSourceMap, indexSourceMap, 'The sourcemap from SourceMapGenerator does not match the source map from SourceMapIndexGenerator');
   test.done();
 };
