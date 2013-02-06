@@ -1,7 +1,7 @@
 {
   "name": "source-map-index-generator",
   "description": "Generate source-maps from index mappings",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/twolfson/source-map-index-generator",
   "author": {
     "name": "Todd Wolfson",
@@ -40,6 +40,7 @@
     "generator"
   ],
   "dependencies": {
-    "source-map": "~0.1.8"
+    "source-map": "~0.1.8",
+    "char-props": "~0.1.3"
   }
 }
