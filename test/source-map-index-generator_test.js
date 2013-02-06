@@ -131,7 +131,7 @@ exports['test generates the same mapping as SourceMapGenerator'] = function (tes
 
   // Collect the second source map
   var indexSourceMap = indexGenerator.toString();
-console.log(indexSourceMap);
+
   // Assert that they generate the same map
   test.strictEqual(genSourceMap, indexSourceMap, 'The sourcemap from SourceMapGenerator does not match the source map from SourceMapIndexGenerator');
   test.done();
