@@ -1,4 +1,4 @@
-# source-map-index-generator
+# source-map-index-generator [![Donate on Gittip](http://badgr.co/gittip/twolfson.png)](https://www.gittip.com/twolfson/)
 
 Generate [source-maps][sourcemap] from index mappings.
 
